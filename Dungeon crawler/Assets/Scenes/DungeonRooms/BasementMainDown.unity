@@ -474,7 +474,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roomTemplates:
   - {fileID: 3753759367060010530, guid: dd1a4a2d697483644986a127d1b997b9, type: 3}
-  - {fileID: 3273811343147233730, guid: 1b4ad3c12b33db24ca82f95dc81f0df3, type: 3}
+  - {fileID: 1423191352515850819, guid: dbfea13b2d18e3a41886d497a80a8262, type: 3}
 --- !u!1 &364155515
 GameObject:
   m_ObjectHideFlags: 0
