@@ -848,7 +848,7 @@ GameObject:
   - component: {fileID: 61251774850522427}
   m_Layer: 0
   m_Name: GameObject
-  m_TagString: Untagged
+  m_TagString: DungeonLayout
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1044,7 +1044,7 @@ GameObject:
   - component: {fileID: 3753759367060010540}
   - component: {fileID: 3753759367060010531}
   m_Layer: 0
-  m_Name: DungeonLayoutU
+  m_Name: DungeonLayout1
   m_TagString: DungeonLayout
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
