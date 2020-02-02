@@ -61,12 +61,15 @@ public class PlayerController : MonoBehaviour
         {
             LeftMovement();
         }
-        else if(vertical > 0.2 || vertical < -0.2)
+        
+        //MOVING UP || DOWN
+        else if (vertical > 0.2 || vertical < -0.2 )
         {
-            moving = true;
+            UpOrDownMovement(vertical);
         }
+
         //NEITHER MOVING RIGHT NOR LEFT
-        else 
+        else
         {
             StandingStill();
         }
@@ -95,6 +98,8 @@ public class PlayerController : MonoBehaviour
 
     void LeftMovement()
     {
+        anim.SetBool("IsUpRight", false);
+        anim.SetBool("IsDownLeft", false);
         anim.SetBool("IsRunningRight", false);
         anim.SetBool("IsIdleRight", false);
         anim.SetBool("IsIdleLeft", false);
@@ -104,6 +109,8 @@ public class PlayerController : MonoBehaviour
 
     void RightMovement()
     {
+        anim.SetBool("IsUpRight", false);
+        anim.SetBool("IsDownLeft", false);
         anim.SetBool("IsRunningLeft", false);
         anim.SetBool("IsIdleRight", false);
         anim.SetBool("IsIdleLeft", false);
@@ -115,6 +122,8 @@ public class PlayerController : MonoBehaviour
     {
         if (lastPosition.x >= transform.position.x)
         {
+            anim.SetBool("IsUpRight", false);
+            anim.SetBool("IsDownLeft", false);
             anim.SetBool("IsRunningLeft", false);
             anim.SetBool("IsIdleRight", false);
             anim.SetBool("IsIdleLeft", true);
@@ -123,13 +132,34 @@ public class PlayerController : MonoBehaviour
 
         else if (lastPosition.x < transform.position.x)
         {
-            
+            anim.SetBool("IsUpRight", false);
+            anim.SetBool("IsDownLeft", false);
             anim.SetBool("IsRunningRight", false);
             anim.SetBool("IsIdleLeft", false);
             anim.SetBool("IsIdleRight", true);
 
         }
         
+    }
+
+    void UpOrDownMovement(float vertical)
+    {
+        //MOVING UP
+        if(vertical > 0.2)
+        {
+            anim.SetBool("IsIdleRight", false);
+            anim.SetBool("IsUpRight", true);
+            anim.SetBool("IsDownLeft", true);
+        }
+
+        //MOVING DOWN
+        else
+        {
+            anim.SetBool("IsIdleLeft", false);
+            anim.SetBool("IsDownLeft", true);
+            anim.SetBool("IsUpRight", true);
+
+        }
     }
 
 
