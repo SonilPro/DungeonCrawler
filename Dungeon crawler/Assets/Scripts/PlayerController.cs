@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rb;
     public Text collectedText;
     public static int collectedAmount = 0;
+    public bool moving;
 
     public GameObject bulletPrefab;
     public float bulletSpeed;
@@ -19,12 +20,13 @@ public class PlayerController : MonoBehaviour
 
     public Text healthText;
 
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
     }
-
+    
 
     void Update()
     {
@@ -46,41 +48,27 @@ public class PlayerController : MonoBehaviour
 
         rb.velocity = new Vector3(horizontal * speed, vertical * speed, 0);
 
+
+
+        //MOVING RIGHT
         if (horizontal > 0.2)
         {
-            anim.SetBool("IsRunningLeft", false);
-            anim.SetBool("IsIdleRight", false);
-            anim.SetBool("IsIdleLeft", false);
-            anim.SetBool("IsRunningRight", true);
-            lastPosition = transform.position;
-
+            RightMovement();
         }
+
+        //MOVING LEFT
         else if (horizontal < -0.2)
         {
-            anim.SetBool("IsRunningRight", false);
-            anim.SetBool("IsIdleRight", false);
-            anim.SetBool("IsIdleLeft", false);
-            anim.SetBool("IsRunningLeft", true);
-            lastPosition = transform.position;
+            LeftMovement();
         }
-        else
+        else if(vertical > 0.2 || vertical < -0.2)
         {
-
-            if (lastPosition.x >= transform.position.x)
-            {
-                anim.SetBool("IsRunningLeft", false);
-                anim.SetBool("IsIdleRight", false);
-                anim.SetBool("IsIdleLeft", true);
-            }
-
-            else if (lastPosition.x < transform.position.x)
-            {
-
-                anim.SetBool("IsRunningRight", false);
-                anim.SetBool("IsIdleLeft", false);
-                anim.SetBool("IsIdleRight", true);
-            }
-
+            moving = true;
+        }
+        //NEITHER MOVING RIGHT NOR LEFT
+        else 
+        {
+            StandingStill();
         }
 
 
@@ -104,6 +92,48 @@ public class PlayerController : MonoBehaviour
     {
 
     }
+
+    void LeftMovement()
+    {
+        anim.SetBool("IsRunningRight", false);
+        anim.SetBool("IsIdleRight", false);
+        anim.SetBool("IsIdleLeft", false);
+        anim.SetBool("IsRunningLeft", true);
+        lastPosition = transform.position;
+    } 
+
+    void RightMovement()
+    {
+        anim.SetBool("IsRunningLeft", false);
+        anim.SetBool("IsIdleRight", false);
+        anim.SetBool("IsIdleLeft", false);
+        anim.SetBool("IsRunningRight", true);
+        lastPosition = transform.position;
+    }
+
+    void StandingStill()
+    {
+        if (lastPosition.x >= transform.position.x)
+        {
+            anim.SetBool("IsRunningLeft", false);
+            anim.SetBool("IsIdleRight", false);
+            anim.SetBool("IsIdleLeft", true);
+
+        }
+
+        else if (lastPosition.x < transform.position.x)
+        {
+            
+            anim.SetBool("IsRunningRight", false);
+            anim.SetBool("IsIdleLeft", false);
+            anim.SetBool("IsIdleRight", true);
+
+        }
+        
+    }
+
+
+    
 
 
 }

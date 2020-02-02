@@ -1,4 +1,4 @@
-{
+﻿{
     "files.exclude":
     {
         "**/.DS_Store":true,
@@ -52,10 +52,5 @@
         "ProjectSettings/":true,
         "temp/":true,
         "Temp/":true
-    },
-    "javascript.format.placeOpenBraceOnNewLineForFunctions": true,
-    "typescript.format.placeOpenBraceOnNewLineForControlBlocks": true,
-    "javascript.format.placeOpenBraceOnNewLineForControlBlocks": true,
-    "typescript.format.placeOpenBraceOnNewLineForFunctions": true,
-    "vsicons.presets.angular": true
+    }
 }
