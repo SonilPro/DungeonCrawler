@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -22,7 +23,9 @@ public enum EnemyType
 
 public class EnemyController : MonoBehaviour
 {
+    public int enemyNumber;
 
+    private PlayerController playerController;
 
     GameObject player;
 
@@ -51,17 +54,25 @@ public class EnemyController : MonoBehaviour
 
     public bool smtg = true;
 
-    // Start is called before the first frame update
+    
     void Start()
-    {
+    { 
+        
+        playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         player = GameObject.FindGameObjectWithTag("Player");
         anim = GetComponent<Animator>();
+        playerController.Setup(this.gameObject);
 
     }
 
     // Update is called once per frame
+
+    
+
     void Update()
     {
+
+        
 
         switch (currState)
         {
@@ -102,8 +113,8 @@ public class EnemyController : MonoBehaviour
     private IEnumerator ChooseDirection()
     {
         chooseDir = true;
-        yield return new WaitForSeconds(Random.Range(1f, 3f));
-        randomDir = Random.Range(1, 8);
+        yield return new WaitForSeconds(UnityEngine.Random.Range(1f, 3f));
+        randomDir = UnityEngine.Random.Range(1, 8);
         chooseDir = false;
     }
 
@@ -222,7 +233,9 @@ public class EnemyController : MonoBehaviour
                     GameController.DamagePlayer(1);
                     StartCoroutine(CoolDown());
                     break;
+
                 case (EnemyType.Ranged):
+                    
                     GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity) as GameObject;
                     bullet.GetComponent<BulletController>().GetPlayer(player.transform);
                     bullet.AddComponent<Rigidbody2D>().gravityScale = 0;

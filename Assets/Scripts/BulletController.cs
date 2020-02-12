@@ -9,9 +9,12 @@ public class BulletController : MonoBehaviour
 
     public bool isEnemyBullet = false;
 
+    public bool isPlayerBullet = false;
+
     public Vector2 lastPos;
     public Vector2 curPos;
     private Vector2 playerPos;
+    private Vector2 enemyPos;
 
 
     // Start is called before the first frame update
@@ -30,6 +33,7 @@ public class BulletController : MonoBehaviour
     {
         if (isEnemyBullet)
         {
+            Debug.Log(playerPos);
             curPos = transform.position;
             transform.position = Vector2.MoveTowards(transform.position, playerPos, 5f * Time.deltaTime);
             if (curPos == lastPos)
@@ -39,11 +43,25 @@ public class BulletController : MonoBehaviour
             lastPos = curPos;
 
         }
+        if (isPlayerBullet)
+        {
+            
+            transform.position = Vector2.MoveTowards(transform.position, enemyPos, 5f * Time.deltaTime);
+        }
     }
-
+    //GET POSITION OF PLAYER
     public void GetPlayer(Transform player)
     {
         playerPos = player.position;
+        
+    }
+
+    //GET POSITION OF ENEMY
+    public void GetEnemy(float x, float y)
+    {
+        enemyPos.x = x;
+        enemyPos.y = y;
+        
     }
 
     IEnumerator DeathDelay()
@@ -55,7 +73,7 @@ public class BulletController : MonoBehaviour
     void OnTriggerEnter2D(Collider2D target)
     {
 
-        if (target.tag == "Enemy" && !isEnemyBullet)
+        if (target.tag == "Enemy" && isPlayerBullet)
         {
             target.gameObject.GetComponent<EnemyController>().Death();
 

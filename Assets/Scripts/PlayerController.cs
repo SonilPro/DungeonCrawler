@@ -1,8 +1,14 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+
+    public List<GameObject> enemies;
+    public List<Vector2> getEnemyPosition;
+    
     public float speed;
     Rigidbody2D rb;
     public Text collectedText;
@@ -15,39 +21,51 @@ public class PlayerController : MonoBehaviour
     public float fireDelay;
 
     private Vector2 lastPosition;
-
+     
     private Animator anim;
 
     public Text healthText;
 
+   
+
 
     void Start()
     {
+        
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        
     }
-    
+
+    public void Setup(GameObject enemy)
+    {
+        
+        enemies.Add(enemy);
+       
+    }
 
     void Update()
     {
-
-        fireDelay = GameController.FireRate;
-        speed = GameController.MoveSpeed;
+        
 
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
+        
+        fireDelay = GameController.FireRate;
+        speed = GameController.MoveSpeed;
 
         float shootHor = Input.GetAxis("ShootHorizontal");
         float shootVert = Input.GetAxis("ShootVertical");
 
-        if ((shootHor != 0 || shootVert != 0) && Time.time > lastFire + fireDelay)
+        if (Input.GetKey(KeyCode.K) && Time.time > lastFire + fireDelay)
         {
-            Shoot(shootHor, shootVert);
+            Shoot();
             lastFire = Time.time;
         }
 
-        rb.velocity = new Vector3(horizontal * speed, vertical * speed, 0);
+        
 
+        rb.velocity = new Vector3(horizontal * speed, vertical * speed, 0);
 
 
         //MOVING RIGHT
@@ -75,21 +93,42 @@ public class PlayerController : MonoBehaviour
         }
 
 
+        GetEnemyPosition();
+        //collectedText.text = "Items collected " + collectedAmount;
 
-        collectedText.text = "Items collected " + collectedAmount;
 
     }
 
-    void Shoot(float x, float y)
-    {
-        GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation) as GameObject;
-        bullet.AddComponent<Rigidbody2D>().gravityScale = 0;
-        bullet.GetComponent<Rigidbody2D>().velocity = new Vector3(
-            (x < 0) ? Mathf.Floor(x) * bulletSpeed : Mathf.Ceil(x) * bulletSpeed,
-            (y < 0) ? Mathf.Floor(y) * bulletSpeed : Mathf.Ceil(y) * bulletSpeed,
-            0
-         );
-    }
+    
+        void GetEnemyPosition()
+        {
+        
+        for (int i = 0; i < enemies.Count; i++)
+            {
+                if(getEnemyPosition.Count == i)
+                {
+                
+                getEnemyPosition.Add(enemies[i].transform.position);
+                
+                }
+                else
+                {
+                getEnemyPosition[i] = enemies[i].transform.position;
+                
+                }
+            
+            }
+        }
+
+        void Shoot()
+        {
+            Vector2 EnemyPositon = getEnemyPosition[0];
+            Debug.Log(EnemyPositon);
+            GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity) as GameObject;
+            bullet.GetComponent<BulletController>().GetEnemy(EnemyPositon.x, EnemyPositon.y);
+            bullet.AddComponent<Rigidbody2D>().gravityScale = 0;
+            bullet.GetComponent<BulletController>().isPlayerBullet = true;
+        }
 
     public void KillPlayer()
     {
