@@ -33,7 +33,7 @@ public class BulletController : MonoBehaviour
     {
         if (isEnemyBullet)
         {
-            Debug.Log(playerPos);
+            
             curPos = transform.position;
             transform.position = Vector2.MoveTowards(transform.position, playerPos, 5f * Time.deltaTime);
             if (curPos == lastPos)

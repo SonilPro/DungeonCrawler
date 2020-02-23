@@ -61,7 +61,7 @@ public class EnemyController : MonoBehaviour
         playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         player = GameObject.FindGameObjectWithTag("Player");
         anim = GetComponent<Animator>();
-        playerController.Setup(this.gameObject);
+        playerController.AddEnemy(this.gameObject);
 
     }
 
@@ -258,5 +258,7 @@ public class EnemyController : MonoBehaviour
     public void Death()
     {
         Destroy(gameObject);
+        playerController.DeleteEnemy(gameObject);
+
     }
 }

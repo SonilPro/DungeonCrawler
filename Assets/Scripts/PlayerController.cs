@@ -26,7 +26,10 @@ public class PlayerController : MonoBehaviour
 
     public Text healthText;
 
-   
+    Vector2 closest;
+    float distance = 0;
+    float closestDistance = 0;
+
 
 
     void Start()
@@ -37,11 +40,16 @@ public class PlayerController : MonoBehaviour
         
     }
 
-    public void Setup(GameObject enemy)
+    public void AddEnemy(GameObject enemy)
     {
         
         enemies.Add(enemy);
        
+    }
+
+    public void DeleteEnemy(GameObject enemy)
+    {
+        enemies.Remove(enemy);
     }
 
     void Update()
@@ -105,11 +113,12 @@ public class PlayerController : MonoBehaviour
         
         for (int i = 0; i < enemies.Count; i++)
             {
+            
                 if(getEnemyPosition.Count == i)
                 {
-                
+
                 getEnemyPosition.Add(enemies[i].transform.position);
-                
+
                 }
                 else
                 {
@@ -122,12 +131,13 @@ public class PlayerController : MonoBehaviour
 
         void Shoot()
         {
-            Vector2 EnemyPositon = getEnemyPosition[0];
-            Debug.Log(EnemyPositon);
+            FindClosestEnemy();
+            /*EnemyPos
+            Debug.Log(enemyPositon);
             GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity) as GameObject;
-            bullet.GetComponent<BulletController>().GetEnemy(EnemyPositon.x, EnemyPositon.y);
+            bullet.GetComponent<BulletController>().GetEnemy(enemyPositon.x, enemyPositon.y);
             bullet.AddComponent<Rigidbody2D>().gravityScale = 0;
-            bullet.GetComponent<BulletController>().isPlayerBullet = true;
+            bullet.GetComponent<BulletController>().isPlayerBullet = true;*/
         }
 
     public void KillPlayer()
@@ -201,8 +211,79 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    void FindClosestEnemy()
+    {
+
+
+        if (getEnemyPosition.Count > 0) {
+            GameObject closestEnemy = enemies[0];
+            float dist = Vector2.Distance(transform.position, enemies[0].transform.position);
+            for (int i = 0; i < enemies.Count; i++) {
+                float tempDist = Vector2.Distance(transform.position, enemies[i].transform.position);
+                if (tempDist < dist) {
+                    closestEnemy = enemies[i];
+                }
+            }
+            Debug.Log(closestEnemy.transform.position);
+            Debug.DrawLine(transform.position, closestEnemy.transform.position);
+        }
+
+        /*for (int i = 0; i < getEnemyPosition.Count; i++)
+        {
+            distance = Vector2.Distance(getEnemyPosition[i], this.transform.position);
+            if(i == 0)
+            {
+                closestDistance = distance;
+            }
+            else
+            {
+                closestDistance = Mathf.Min(closestDistance, distance);
+                
+                
+                
+                
+            }
+            if (i == getEnemyPosition.Count - 1 && Vector2.Distance(getEnemyPosition[i], this.transform.position) == closestDistance)
+            {
+                closest = getEnemyPosition[i];
+                
+            }
+
+        }
+
+
+
+            /*if (closestDistance > Vector2.Distance(getEnemyPosition[i], this.transform.position))
+            {
+                closestDistance = Vector2.Distance(getEnemyPosition[i], this.transform.position);
+                closest = getEnemyPosition[i];
+                Debug.Log(closestDistance);
+                
+                Debug.Log(closest);
+            }
+            else
+            {
+                closestDistance = Vector2.Distance(getEnemyPosition[i], this.transform.position);
+                Debug.Log(closestDistance);
+            }
+
+            
+            */
+
+
+    }
+        
+
+
+
+
+
+
+
+
+
 
     
 
-
+    
 }
