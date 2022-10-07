@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Sword1
+  m_Name: SwordAnimation
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -22,23 +22,23 @@ AnimationClip:
     - time: 0
       value: {fileID: 712035800519618848, guid: e40517e28e8c1454485b7c2d871986a2,
         type: 3}
-    - time: 0.020833334
+    - time: 0.05
       value: {fileID: 1497478763720940017, guid: e40517e28e8c1454485b7c2d871986a2,
         type: 3}
-    - time: 0.041666668
+    - time: 0.1
       value: {fileID: -3664594969507694454, guid: e40517e28e8c1454485b7c2d871986a2,
         type: 3}
-    - time: 0.0625
+    - time: 0.15
       value: {fileID: -4326360533754234484, guid: e40517e28e8c1454485b7c2d871986a2,
         type: 3}
-    - time: 0.083333336
+    - time: 0.2
       value: {fileID: -2400559193241486504, guid: e40517e28e8c1454485b7c2d871986a2,
         type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
-  m_SampleRate: 48
+  m_SampleRate: 60
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -63,7 +63,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.10416667
+    m_StopTime: 0.21666667
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
