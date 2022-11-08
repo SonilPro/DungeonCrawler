@@ -15,8 +15,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public float health;
     [SerializeField] public float maxHealth;
 
-    [Space(15)]
     //ENEMIES
+    [NonSerialized]
     public GameObject closestEnemy;
     private List<GameObject> enemies = new List<GameObject>();
     private List<Vector2> enemyPositions = new List<Vector2>();
