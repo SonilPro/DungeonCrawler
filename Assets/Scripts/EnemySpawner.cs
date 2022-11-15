@@ -38,7 +38,6 @@ public class EnemySpawner : MonoBehaviour
         if (transform.childCount == 0 && !allDead)
         {
             allDead = true;
-            Debug.Log(transform.parent.GetChild(1));
         }
     }
 }
