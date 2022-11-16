@@ -76,9 +76,9 @@ public class BulletController : MonoBehaviour
         Destroy(gameObject);
     }
 
-    void OnTriggerEnter(Collider target)
+    void OnTriggerEnter2D(Collider2D target)
     {
-
+        
         if (target.tag == "Enemy" && isPlayerBullet)
         {
             target.gameObject.GetComponent<EnemyController>().Death();
