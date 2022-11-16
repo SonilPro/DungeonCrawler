@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5370475101047790394}
   - component: {fileID: 6303296248306950815}
   - component: {fileID: 184772987058844808}
-  - component: {fileID: 5370475101047790396}
+  - component: {fileID: 4051079980794257166}
   - component: {fileID: 5370475101047790395}
   - component: {fileID: 3212565657026189933}
   m_Layer: 0
@@ -105,19 +105,32 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!65 &5370475101047790396
-BoxCollider:
+--- !u!61 &4051079980794257166
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5370475101047790397}
+  m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.012947261, y: 0.024717554}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.48705274, y: 0.47528246}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!114 &5370475101047790395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,7 +163,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   SpriteOffset: 0
-  player: {fileID: 0}
+  player: {fileID: 4588827076449257896, guid: a5e643dda3bc4ef409b36c494828ebbe, type: 3}
   isAtached: 0
   bulletPrefab: {fileID: 0}
 --- !u!1 &5370475102754623368

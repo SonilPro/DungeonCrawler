@@ -39,12 +39,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 954774003687835719}
-  - component: {fileID: 954774003687835721}
   - component: {fileID: 954774003687835718}
   - component: {fileID: 954774003687835716}
+  - component: {fileID: 2820360596789398107}
   - component: {fileID: 954774003687835720}
   - component: {fileID: 954774003687835717}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Bow3D
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 954774003687835722}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.392, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -66,19 +66,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &954774003687835721
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 954774003687835722}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &954774003687835718
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -139,7 +126,7 @@ Animator:
   m_GameObject: {fileID: 954774003687835722}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: b20bca6c1daf3a94cb62ee639312e53a, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -148,6 +135,32 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!61 &2820360596789398107
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 954774003687835722}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.07532956, y: 0.0094162375}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.42467043, y: 0.49058375}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!114 &954774003687835720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,7 +193,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   SpriteOffset: 0
-  player: {fileID: 0}
+  player: {fileID: 4588827076449257896, guid: a5e643dda3bc4ef409b36c494828ebbe, type: 3}
   isAtached: 0
   bulletPrefab: {fileID: 7284191674627908290, guid: 2d57e6dcc1fc64042901b0f27d6ec36d,
     type: 3}

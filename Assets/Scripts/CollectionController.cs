@@ -20,12 +20,12 @@ public class CollectionController : MonoBehaviour
     void Start()
     {
         GetComponent<SpriteRenderer>().sprite = item.itemImage;
-        Destroy(GetComponent<BoxCollider>());
-        gameObject.AddComponent<BoxCollider>();
-        GetComponent<BoxCollider>().isTrigger = true;
+        Destroy(GetComponent<BoxCollider2D>());
+        gameObject.AddComponent<BoxCollider2D>();
+        GetComponent<BoxCollider2D>().isTrigger = true;
     }
 
-    private void OnTriggerEnter(Collider collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
         {

@@ -23,9 +23,8 @@ public class WeaponSwapper : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay(Collider target)
+    private void OnTriggerStay2D(Collider2D target)
     {
-
         if (target.tag == "Weapon" && Input.GetKeyDown(KeyCode.Mouse0) && Time.time > (lastFire + 0.2f))
         {
             //Check if a weapon is already equipped
@@ -57,7 +56,7 @@ public class WeaponSwapper : MonoBehaviour
         Debug.Log(activeWeapon.name);
     }
 
-    void PickupWeapon(Collider target)
+    void PickupWeapon(Collider2D target)
     {
 
         target.GetComponentInChildren<WeaponController>().isAtached = true;
@@ -66,7 +65,7 @@ public class WeaponSwapper : MonoBehaviour
         lastFire = Time.time;
     }
 
-    void DropWeapon(Collider target)
+    void DropWeapon(Collider2D target)
     {
 
         GameObject child = activeWeapon.transform.GetChild(0).gameObject;

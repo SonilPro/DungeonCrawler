@@ -58,26 +58,26 @@ public class WeaponController : MonoBehaviour
             case (WeaponType.Melee):
                 //Detect enemies in range of attack
                 //2D
-                //Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.transform.position, attackRange, enemyLayers);
+                Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.transform.position, attackRange, enemyLayers);
                 //3D
-                Collider[] hitEnemies = Physics.OverlapSphere(attackPoint.transform.position, attackRange, enemyLayers);
+                // Collider[] hitEnemies = Physics.OverlapSphere(attackPoint.transform.position, attackRange, enemyLayers);
                 //Damage them
                 //2D
-                // foreach (Collider2D enemy in hitEnemies)
-                // {
-                //     Debug.Log(enemy.tag);
-                //     playerController.DeleteEnemy(enemy.gameObject);
-                //     Destroy(enemy.gameObject);
-                //     break;
-                // }
-                //3D
-                foreach (Collider enemy in hitEnemies)
+                foreach (Collider2D enemy in hitEnemies)
                 {
                     Debug.Log(enemy.tag);
                     playerController.DeleteEnemy(enemy.gameObject);
                     Destroy(enemy.gameObject);
                     break;
                 }
+                //3D
+                // foreach (Collider enemy in hitEnemies)
+                // {
+                //     Debug.Log(enemy.tag);
+                //     playerController.DeleteEnemy(enemy.gameObject);
+                //     Destroy(enemy.gameObject);
+                //     break;
+                // }
                 break;
             case (WeaponType.Ranged):
                 bool found = playerController.FindClosestEnemy();
