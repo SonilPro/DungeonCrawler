@@ -19,7 +19,6 @@ public class PlayerController : MonoBehaviour
     [NonSerialized]
     public GameObject closestEnemy;
     private List<GameObject> enemies = new List<GameObject>();
-    private List<Vector2> enemyPositions = new List<Vector2>();
 
     void Start()
     {
@@ -80,27 +79,10 @@ public class PlayerController : MonoBehaviour
         anim.SetFloat("Speed", Mathf.Min(movement.sqrMagnitude, 1));
     }
 
-    void GetEnemyPosition()
-    {
-        for (int i = 0; i < enemies.Count; i++)
-        {
-            if (enemyPositions.Count == i)
-            {
-
-                enemyPositions.Add(enemies[i].transform.position);
-            }
-            else
-            {
-                enemyPositions[i] = enemies[i].transform.position;
-            }
-        }
-    }
-
     public bool FindClosestEnemy()
     {
-        GetEnemyPosition();
         bool found = false;
-        if (enemyPositions.Count > 0)
+        if (enemies.Count > 0)
         {
             found = true;
             if (enemies.Count == 0) return false;
