@@ -77,6 +77,7 @@ GameObject:
   - component: {fileID: -480396049345031657}
   - component: {fileID: 4588827076449257811}
   - component: {fileID: 1102154123335117121}
+  - component: {fileID: 901731448}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -139,8 +140,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1619132409
-  m_SortingLayer: -3
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2311659948842064771, guid: 1be8e8f115bdc8e4a94f3074595496ff,
     type: 3}
@@ -240,3 +241,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainWeapon: {fileID: 775035654}
   offHandWeapon: {fileID: 458890310}
+--- !u!210 &901731448
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4588827076449257896}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
