@@ -18,7 +18,7 @@ public class BulletController : MonoBehaviour
 
     void Awake()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        player = GameController.Instance.player;
     }
 
     // Start is called before the first frame update
@@ -78,7 +78,7 @@ public class BulletController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D target)
     {
-        
+
         if (target.tag == "Enemy" && isPlayerBullet)
         {
             target.gameObject.GetComponent<EnemyController>().Death();

@@ -58,12 +58,15 @@ TagManager:
   - name: Enemies
     uniqueID: 3321520793
     locked: 0
-  - name: Weapons
-    uniqueID: 2087778743
-    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Weapons
+    uniqueID: 2087778743
+    locked: 0
   - name: entities
     uniqueID: 1797690607
+    locked: 0
+  - name: Walls
+    uniqueID: 772010663
     locked: 0

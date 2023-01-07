@@ -8,7 +8,12 @@ public class HealthUIController : MonoBehaviour
 
     [SerializeField] private GameObject heartContainer;
     private float fillValue;
-    [SerializeField] private PlayerController playerController = default;
+    private PlayerController playerController;
+
+    private void Awake()
+    {
+        playerController = GameController.Instance.player.GetComponent<PlayerController>();
+    }
 
     void Update()
     {

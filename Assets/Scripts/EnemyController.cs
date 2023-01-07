@@ -44,7 +44,7 @@ public class EnemyController : MonoBehaviour
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        player = GameController.Instance.player;
         anim = GetComponent<Animator>();
         player.GetComponent<PlayerController>().AddEnemy(this.gameObject);
 

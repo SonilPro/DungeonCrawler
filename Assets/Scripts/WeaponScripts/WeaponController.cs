@@ -22,8 +22,6 @@ public class WeaponController : MonoBehaviour
     [SerializeField] private LayerMask enemyLayers = default;
     private float nextAttackTime = 0f;
     public float SpriteOffset = 0.0f;
-
-    [SerializeField] private GameObject player = default;
     private PlayerController playerController;
 
     public bool isAtached = false;
@@ -32,7 +30,7 @@ public class WeaponController : MonoBehaviour
 
     private void Start()
     {
-        playerController = player.GetComponent<PlayerController>();
+        playerController = GameController.Instance.player.GetComponent<PlayerController>();
     }
 
     private void Update()

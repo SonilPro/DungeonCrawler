@@ -15,7 +15,12 @@ public class CollectionController : MonoBehaviour
     [SerializeField] private Item item;
     [SerializeField] private float healthChange;
 
-    [SerializeField] private PlayerController playerController;
+    private PlayerController playerController;
+
+    private void Awake()
+    {
+        playerController = GameController.Instance.player.GetComponent<PlayerController>();
+    }
 
     void Start()
     {
