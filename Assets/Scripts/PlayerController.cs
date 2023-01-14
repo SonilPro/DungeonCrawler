@@ -15,9 +15,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public float health;
     [SerializeField] public float maxHealth;
 
-    //ENEMIES
-    [NonSerialized]
-    public GameObject closestEnemy;
     private List<GameObject> enemies = new List<GameObject>();
 
     void Start()
@@ -78,29 +75,4 @@ public class PlayerController : MonoBehaviour
         anim.SetFloat("Horizontal", movement.x);
         anim.SetFloat("Speed", Mathf.Min(movement.sqrMagnitude, 1));
     }
-
-    public bool FindClosestEnemy()
-    {
-        bool found = false;
-        if (enemies.Count > 0)
-        {
-            found = true;
-            if (enemies.Count == 0) return false;
-
-            closestEnemy = enemies[0];
-            float dist = Vector2.Distance(transform.position, enemies[0].transform.position);
-            for (int i = 1; i < enemies.Count; i++)
-            {
-                float tempDist = Vector2.Distance(transform.position, enemies[i].transform.position);
-                if (tempDist < dist)
-                {
-                    closestEnemy = enemies[i];
-                    dist = tempDist;
-                }
-            }
-            Debug.DrawLine(transform.position, closestEnemy.transform.position);
-        }
-        return found;
-    }
-
 }

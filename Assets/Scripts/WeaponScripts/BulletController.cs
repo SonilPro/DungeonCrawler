@@ -4,72 +4,41 @@ using UnityEngine;
 
 public class BulletController : MonoBehaviour
 {
-
+    private Rigidbody2D rb;
     [SerializeField] private float lifeTime;
+    [SerializeField] private float speed = 10f;
     public bool isEnemyBullet = false;
     public bool isPlayerBullet = false;
 
     private Vector2 lastPos;
     private Vector2 curPos;
-    private Vector2 playerPos;
-    private Vector2 enemyPos;
-
     private GameObject player;
+    private Vector3 mousePosition;
 
     void Awake()
     {
         player = GameController.Instance.player;
+        rb = GetComponent<Rigidbody2D>();
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(DeathDelay());
-        if (!isEnemyBullet)
-        {
-            transform.localScale = new Vector2(0.5f, 0.5f);
-        }
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
+        Vector3 direction;
         if (isEnemyBullet)
         {
-
-            curPos = transform.position;
-            transform.position = Vector2.MoveTowards(transform.position, playerPos, 5f * Time.deltaTime);
-
-            if (curPos == lastPos)
-            {
-                Destroy(gameObject);
-            }
-            lastPos = curPos;
+            direction = player.transform.position - transform.position;
         }
-        if (isPlayerBullet)
+        else
         {
-            curPos = transform.position;
-            transform.position = Vector2.MoveTowards(transform.position, enemyPos, 5f * Time.deltaTime);
-            if (curPos == lastPos)
-            {
-                Destroy(gameObject);
-            }
-            lastPos = curPos;
+            mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            direction = mousePosition - transform.position;
         }
 
+        rb.velocity = new Vector2(direction.x, direction.y).normalized * speed;
     }
-    //SET POSITION OF PLAYER
-    public void SetPlayer(Transform player)
-    {
-        playerPos = player.position;
-    }
-    //SET POSITION OF ENEMY
-    public void SetEnemy(float x, float y)
-    {
-        enemyPos.x = x;
-        enemyPos.y = y;
-    }
+
     IEnumerator DeathDelay()
     {
         yield return new WaitForSeconds(lifeTime);
@@ -78,7 +47,6 @@ public class BulletController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D target)
     {
-
         if (target.tag == "Enemy" && isPlayerBullet)
         {
             target.gameObject.GetComponent<EnemyController>().Death();
@@ -90,7 +58,5 @@ public class BulletController : MonoBehaviour
             player.GetComponent<PlayerController>().DamagePlayer(1);
             Destroy(gameObject);
         }
-
     }
-
 }
