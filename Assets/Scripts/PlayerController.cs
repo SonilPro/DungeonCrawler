@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
 
     //PLAYER VARIABLES
     private Animator anim;
-
+    private Rigidbody2D rb;
     //MOVEMENT VARIABLES
     private Vector2 movement;
     [SerializeField] private float speed;
@@ -20,11 +20,12 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     void FixedUpdate()
     {
-        transform.Translate(movement * speed * Time.deltaTime, 0);
+        rb.velocity = movement * speed;
     }
 
     void Update()
@@ -32,7 +33,6 @@ public class PlayerController : MonoBehaviour
         Movement();
         float shootHor = Input.GetAxis("ShootHorizontal");
         float shootVert = Input.GetAxis("ShootVertical");
-
     }
 
     public void DamagePlayer(int damage)

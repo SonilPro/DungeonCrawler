@@ -177,7 +177,7 @@ TilemapCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.05}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
 --- !u!483693784 &47466903
@@ -7495,18 +7495,9 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 30536788, guid: a5e643dda3bc4ef409b36c494828ebbe, type: 3}
-      propertyPath: threshold
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 30536788, guid: a5e643dda3bc4ef409b36c494828ebbe, type: 3}
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 519420031}
-    - target: {fileID: 1372801170664282748, guid: a5e643dda3bc4ef409b36c494828ebbe,
-        type: 3}
-      propertyPath: m_Interpolate
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4588827076449257896, guid: a5e643dda3bc4ef409b36c494828ebbe,
         type: 3}
       propertyPath: m_Name
