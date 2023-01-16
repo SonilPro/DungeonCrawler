@@ -5,10 +5,10 @@ using System;
 
 public class EventHandler : MonoBehaviour
 {
-    public static event Action TriggerDoorStateEvent;
+    public static event Action<int> TriggerDoorStateEvent;
 
-    public static void StartDoorEvent()
+    public static void StartDoorEvent(int id)
     {
-        TriggerDoorStateEvent?.Invoke();
+        TriggerDoorStateEvent?.Invoke(id);
     }
 }

@@ -12,6 +12,7 @@ TagManager:
   - EntryRoom
   - Bullet
   - Weapon
+  - Door
   layers:
   - Default
   - TransparentFX

@@ -24,12 +24,12 @@ public class EnemySpawner : MonoBehaviour
         {
             allDead = true;
             spawnerEnabled = false;
-            EventHandler.StartDoorEvent();
+            EventHandler.StartDoorEvent(transform.parent.GetInstanceID());
         }
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Player" && !allDead)
+        if (other.tag == "Player" && !allDead && !spawnerEnabled)
         {
             Spawn();
         }
@@ -43,7 +43,9 @@ public class EnemySpawner : MonoBehaviour
     void Spawn()
     {
         spawnerEnabled = true;
-        EventHandler.StartDoorEvent();
+        Debug.Log(transform.parent.GetInstanceID());
+        Debug.Log(transform.parent);
+        EventHandler.StartDoorEvent(transform.parent.GetInstanceID());
         while (enemyCount-- > 0)
         {
             Instantiate(enemies[Random.Range(0, enemies.Length)], RandomCircle(), transform.rotation, transform);

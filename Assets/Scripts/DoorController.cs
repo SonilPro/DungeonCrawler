@@ -7,7 +7,6 @@ public class DoorController : MonoBehaviour
     private void Start()
     {
         gameObject.SetActive(false);
-        EventHandler.TriggerDoorStateEvent += TriggerDoor;
     }
 
     private void TriggerDoor()
