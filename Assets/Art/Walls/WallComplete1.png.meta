@@ -191,6 +191,18 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -212,7 +224,7 @@ TextureImporter:
       spriteID: ff3ad900424e2c3d0800000000000000
       internalID: 6965107275689322481
       vertices: []
-      indices: 
+      indices:
       edges: []
       weights: []
     - serializedVersion: 2
@@ -233,7 +245,7 @@ TextureImporter:
       spriteID: 0050765d2f55e3f80800000000000000
       internalID: -8492038589593352964
       vertices: []
-      indices: 
+      indices:
       edges: []
       weights: []
     - serializedVersion: 2
@@ -254,7 +266,7 @@ TextureImporter:
       spriteID: 34d67afeda7425fe0800000000000000
       internalID: -7532880409940704017
       vertices: []
-      indices: 
+      indices:
       edges: []
       weights: []
     - serializedVersion: 2
@@ -275,7 +287,7 @@ TextureImporter:
       spriteID: cfcfbbfa7875b92b0800000000000000
       internalID: -7674645264961097094
       vertices: []
-      indices: 
+      indices:
       edges: []
       weights: []
     - serializedVersion: 2
@@ -300,7 +312,7 @@ TextureImporter:
       spriteID: 17a462b9f6f3051a0800000000000000
       internalID: -4519245489520760597
       vertices: []
-      indices: 
+      indices:
       edges: []
       weights: []
     - serializedVersion: 2
@@ -321,7 +333,7 @@ TextureImporter:
       spriteID: 46fd9cb0f8c8a0c20800000000000000
       internalID: 3345127946994370962
       vertices: []
-      indices: 
+      indices:
       edges: []
       weights: []
     - serializedVersion: 2
@@ -342,7 +354,7 @@ TextureImporter:
       spriteID: c5548608a5faafd80800000000000000
       internalID: -5570864896569923575
       vertices: []
-      indices: 
+      indices:
       edges: []
       weights: []
     - serializedVersion: 2
@@ -363,7 +375,7 @@ TextureImporter:
       spriteID: e6a3001e8b7892930800000000000000
       internalID: -2538514177909462906
       vertices: []
-      indices: 
+      indices:
       edges: []
       weights: []
     - serializedVersion: 2
@@ -384,7 +396,7 @@ TextureImporter:
       spriteID: d9a8059534051b990800000000000000
       internalID: -184945698935243351
       vertices: []
-      indices: 
+      indices:
       edges: []
       weights: []
     - serializedVersion: 2
@@ -405,7 +417,7 @@ TextureImporter:
       spriteID: 6adb64fda03b27a70800000000000000
       internalID: -2281358054788654567
       vertices: []
-      indices: 
+      indices:
       edges: []
       weights: []
     - serializedVersion: 2
@@ -426,7 +438,7 @@ TextureImporter:
       spriteID: 8f36564f74305c5a0800000000000000
       internalID: 1036416143444395717
       vertices: []
-      indices: 
+      indices:
       edges: []
       weights: []
     - serializedVersion: 2
@@ -451,7 +463,7 @@ TextureImporter:
       spriteID: d20a5e0be00440ca0800000000000000
       internalID: 5901716289120769127
       vertices: []
-      indices: 
+      indices:
       edges: []
       weights: []
     - serializedVersion: 2
@@ -476,7 +488,7 @@ TextureImporter:
       spriteID: cbe2e735f7f1d7ed0800000000000000
       internalID: -2414739193478631748
       vertices: []
-      indices: 
+      indices:
       edges: []
       weights: []
     - serializedVersion: 2
@@ -501,7 +513,7 @@ TextureImporter:
       spriteID: 7835d19ccf2910cd0800000000000000
       internalID: -2593630295985138809
       vertices: []
-      indices: 
+      indices:
       edges: []
       weights: []
     outline: []
@@ -510,7 +522,7 @@ TextureImporter:
     spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
-    indices: 
+    indices:
     edges: []
     weights: []
     secondaryTextures: []
@@ -529,9 +541,9 @@ TextureImporter:
       WallComplete1_0: 6965107275689322481
       WallComplete1_11: 5901716289120769127
       WallComplete1_9: -2281358054788654567
-  spritePackingTag: 
+  spritePackingTag:
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 
+  userData:
+  assetBundleName:
+  assetBundleVariant:
