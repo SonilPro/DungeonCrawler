@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour
 {
-    public GameObject loadingPanel;
+    [SerializeField] private GameObject loadingPanel;
 
     public void LoadScene(string sceneName)
     {
