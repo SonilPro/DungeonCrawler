@@ -3640,7 +3640,7 @@ MonoBehaviour:
   m_Priority: 10
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 1348578058}
+  m_Follow: {fileID: 787154626}
   m_Lens:
     FieldOfView: 60
     OrthographicSize: 4.85
@@ -3650,7 +3650,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.8346775, y: 1}
+    m_SensorSize: {x: 1.8244972, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -3667,7 +3667,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 142682923}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.67, y: -2.27, z: -13}
+  m_LocalPosition: {x: 4.834838, y: 0.32619643, z: -13.082646}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4301,7 +4301,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.67, y: -2.27, z: -13}
+  m_LocalPosition: {x: 4.834838, y: 0.32619643, z: -13.082646}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4514,14 +4514,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4588827076449257902, guid: a5e643dda3bc4ef409b36c494828ebbe,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 896681161, guid: 921171393d53d5048a97e6e362cd3ec2,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5e643dda3bc4ef409b36c494828ebbe, type: 3}
+--- !u!4 &787154626 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 30536789, guid: a5e643dda3bc4ef409b36c494828ebbe,
+    type: 3}
+  m_PrefabInstance: {fileID: 787154625}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &826863357
 GameObject:
   m_ObjectHideFlags: 0
@@ -7535,12 +7535,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &1348578058 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4588827076449257901, guid: a5e643dda3bc4ef409b36c494828ebbe,
-    type: 3}
-  m_PrefabInstance: {fileID: 787154625}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1438060309
 GameObject:
   m_ObjectHideFlags: 0
