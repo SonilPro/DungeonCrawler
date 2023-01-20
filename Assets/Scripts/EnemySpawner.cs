@@ -43,8 +43,6 @@ public class EnemySpawner : MonoBehaviour
     void Spawn()
     {
         spawnerEnabled = true;
-        Debug.Log(transform.parent.GetInstanceID());
-        Debug.Log(transform.parent);
         EventHandler.StartDoorEvent(transform.parent.GetInstanceID());
         while (enemyCount-- > 0)
         {

@@ -6,12 +6,18 @@ using System.Linq;
 public class RoomController : MonoBehaviour
 {
     private Transform[] doors;
+    
     void Awake()
     {
         EventHandler.TriggerDoorStateEvent += TriggerDoor;
 
         doors = gameObject.GetComponentsInChildren<Transform>();
         doors = doors.Where(child => child.tag == "Door").ToArray();
+
+        foreach (Transform door in doors)
+        {
+            door.gameObject.SetActive(false);
+        }
     }
 
     private void TriggerDoor(int id)
