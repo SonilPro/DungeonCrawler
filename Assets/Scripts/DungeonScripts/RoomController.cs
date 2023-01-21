@@ -1,27 +1,33 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class RoomController : MonoBehaviour
 {
-    RoomTemplates templates;
-    bool spawned = false;
-    GameObject child;
-
-    void Start()
+    private Transform[] doors;
+    
+    void Awake()
     {
-        templates = RoomTemplates.Instance;
-        Invoke("Spawn", 0.2f);
-    }
+        EventHandler.TriggerDoorStateEvent += TriggerDoor;
 
-    void Spawn()
-    {
-        if (spawned == false)
+        doors = gameObject.GetComponentsInChildren<Transform>();
+        doors = doors.Where(child => child.tag == "Door").ToArray();
+
+        foreach (Transform door in doors)
         {
-            int random = Random.Range(0, templates.roomTemplates.Length);
-            Instantiate(templates.roomTemplates[random], transform.position, templates.roomTemplates[random].transform.rotation);
+            door.gameObject.SetActive(false);
         }
-        spawned = true;
     }
 
+    private void TriggerDoor(int id)
+    {
+        if (id == transform.GetInstanceID())
+        {
+            foreach (Transform door in doors)
+            {
+                door.gameObject.SetActive(!door.gameObject.activeSelf);
+            }
+        }
+    }
 }
