@@ -11,6 +11,7 @@ public enum SpawnType
 public class EnemySpawner : MonoBehaviour
 {
 
+    [SerializeField] private int enemyCount;
     [SerializeField] private GameObject[] enemies;
     [SerializeField] private SpawnType spawnType = SpawnType.Circle;
     [SerializeField] private float spawnRadius;
@@ -18,13 +19,6 @@ public class EnemySpawner : MonoBehaviour
 
     private bool allDead = false;
     private bool spawnerEnabled = false;
-
-    private int enemyCount;
-
-    void Start()
-    {
-        enemyCount = Random.Range(4, 6);
-    }
 
     void Update()
     {

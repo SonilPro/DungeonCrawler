@@ -6,7 +6,7 @@ using System.Linq;
 public class RoomController : MonoBehaviour
 {
     private Transform[] doors;
-    
+
     void Awake()
     {
         EventHandler.TriggerDoorStateEvent += TriggerDoor;
