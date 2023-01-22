@@ -3525,10 +3525,55 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 882423039}
     m_Modifications:
+    - target: {fileID: 2377926820187103080, guid: 1ccfc748670e7ed4db1cef8580681bf8,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.89
+      objectReference: {fileID: 0}
+    - target: {fileID: 2377926820187103081, guid: 1ccfc748670e7ed4db1cef8580681bf8,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 13.96
+      objectReference: {fileID: 0}
+    - target: {fileID: 2377926820187103081, guid: 1ccfc748670e7ed4db1cef8580681bf8,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 3.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2377926820187103081, guid: 1ccfc748670e7ed4db1cef8580681bf8,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2377926820187103081, guid: 1ccfc748670e7ed4db1cef8580681bf8,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2377926820187103086, guid: 1ccfc748670e7ed4db1cef8580681bf8,
         type: 3}
       propertyPath: m_TagString
       value: Spawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 2377926820187103087, guid: 1ccfc748670e7ed4db1cef8580681bf8,
+        type: 3}
+      propertyPath: spawnType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2377926820187103087, guid: 1ccfc748670e7ed4db1cef8580681bf8,
+        type: 3}
+      propertyPath: spawnRadius
+      value: 1.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 2377926820187103087, guid: 1ccfc748670e7ed4db1cef8580681bf8,
+        type: 3}
+      propertyPath: spawnRange.x
+      value: 13.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 2377926820187103087, guid: 1ccfc748670e7ed4db1cef8580681bf8,
+        type: 3}
+      propertyPath: spawnRange.y
+      value: 4.1
       objectReference: {fileID: 0}
     - target: {fileID: 2377926821334373536, guid: 1ccfc748670e7ed4db1cef8580681bf8,
         type: 3}
