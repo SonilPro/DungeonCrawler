@@ -13,6 +13,7 @@ TagManager:
   - Bullet
   - Weapon
   - Door
+  - Spawner
   layers:
   - Default
   - TransparentFX

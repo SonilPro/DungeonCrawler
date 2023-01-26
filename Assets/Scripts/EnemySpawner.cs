@@ -20,39 +20,19 @@ public class EnemySpawner : MonoBehaviour
     private bool allDead = false;
     private bool spawnerEnabled = false;
 
-    void Update()
+    private void Update()
     {
         if (transform.childCount == 0 && !allDead && spawnerEnabled)
         {
             allDead = true;
             spawnerEnabled = false;
-            EventHandler.StartDoorEvent(transform.parent.GetInstanceID());
+            EventHandler.StartSpawnerClearEvent(transform.parent.GetInstanceID());
         }
     }
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.tag == "Player" && !allDead && !spawnerEnabled)
-        {
-            Spawn();
-        }
-    }
-
-    private void OnDrawGizmosSelected()
-    {
-        if (spawnType == SpawnType.Circle)
-        {
-            Gizmos.DrawWireSphere(transform.position, spawnRadius);
-        }
-        else
-        {
-            Gizmos.DrawWireCube(transform.position, new Vector3(spawnRange.x, spawnRange.y, 0));
-        }
-    }
-
-    void Spawn()
+    
+    public void Spawn()
     {
         spawnerEnabled = true;
-        EventHandler.StartDoorEvent(transform.parent.GetInstanceID());
         while (enemyCount-- > 0)
         {
             Instantiate(enemies[Random.Range(0, enemies.Length)], (spawnType == SpawnType.Circle) ? RandomCircle() : RandomRectangle(), transform.rotation, transform);
@@ -80,5 +60,17 @@ public class EnemySpawner : MonoBehaviour
         pos.y = Random.Range(center.y - halfHeight, center.y + halfHeight);
         pos.z = center.z;
         return pos;
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        if (spawnType == SpawnType.Circle)
+        {
+            Gizmos.DrawWireSphere(transform.position, spawnRadius);
+        }
+        else
+        {
+            Gizmos.DrawWireCube(transform.position, new Vector3(spawnRange.x, spawnRange.y, 0));
+        }
     }
 }

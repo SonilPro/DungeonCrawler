@@ -6,28 +6,53 @@ using System.Linq;
 public class RoomController : MonoBehaviour
 {
     private Transform[] doors;
+    private Transform[] spawners;
+    private bool spawnersEnabled = false;
+    private int spawnersLeft = 0;
 
     void Awake()
     {
-        EventHandler.TriggerDoorStateEvent += TriggerDoor;
+        EventHandler.TriggerSpawnerClear += SpawnerCleared;
+        var children = gameObject.GetComponentsInChildren<Transform>();
 
-        doors = gameObject.GetComponentsInChildren<Transform>();
-        doors = doors.Where(child => child.tag == "Door").ToArray();
-
+        doors = children.Where(child => child.tag == "Door").ToArray();
+        spawners = children.Where(child => child.tag == "Spawner").ToArray();
+        spawnersLeft = spawners.Count();
+        
         foreach (Transform door in doors)
         {
             door.gameObject.SetActive(false);
         }
     }
 
-    private void TriggerDoor(int id)
+    private void SpawnerCleared(int id){
+        if(id == transform.GetInstanceID()){
+        spawnersLeft--;
+        if(spawnersLeft < 1){
+            TriggerDoor();
+        }
+        }
+    }
+
+    private void TriggerDoor()
     {
-        if (id == transform.GetInstanceID())
+        foreach (Transform door in doors)
         {
-            foreach (Transform door in doors)
+            door.gameObject.SetActive(!door.gameObject.activeSelf);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Player" && !spawnersEnabled)
+        {
+            spawnersEnabled = true;
+            foreach (Transform spawner in spawners)
             {
-                door.gameObject.SetActive(!door.gameObject.activeSelf);
+                spawner.GetComponent<EnemySpawner>().Spawn();
             }
+
+            TriggerDoor();
         }
     }
 }
