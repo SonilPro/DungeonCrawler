@@ -1203,7 +1203,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 4.225519, y: 1}
+    m_SensorSize: {x: 3.4816513, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -3652,7 +3652,7 @@ PrefabInstance:
     - target: {fileID: 2377926820187103080, guid: 1ccfc748670e7ed4db1cef8580681bf8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.08
+      value: 5.37
       objectReference: {fileID: 0}
     - target: {fileID: 2377926820187103080, guid: 1ccfc748670e7ed4db1cef8580681bf8,
         type: 3}
@@ -3674,6 +3674,17 @@ PrefabInstance:
       propertyPath: enemyCount
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 2377926820187103087, guid: 1ccfc748670e7ed4db1cef8580681bf8,
+        type: 3}
+      propertyPath: enemies.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2377926820187103087, guid: 1ccfc748670e7ed4db1cef8580681bf8,
+        type: 3}
+      propertyPath: enemies.Array.data[0]
+      value: 
+      objectReference: {fileID: 7260597336228950928, guid: 3e4e792f198c5864faf6cee2d50a9cb6,
+        type: 3}
     - target: {fileID: 2377926820752255929, guid: 1ccfc748670e7ed4db1cef8580681bf8,
         type: 3}
       propertyPath: m_LocalPosition.x
