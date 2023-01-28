@@ -25,6 +25,7 @@ public class EnemyController : MonoBehaviour
     private GameObject player;
 
     private Animator anim;
+    private SpriteRenderer spriteRenderer;
 
     [SerializeField] private EnemyState currState = EnemyState.Wander;
     [SerializeField] private EnemyType enemyType;
@@ -46,6 +47,7 @@ public class EnemyController : MonoBehaviour
     {
         player = GameController.Instance.player;
         anim = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         player.GetComponent<PlayerController>().AddEnemy(this.gameObject);
 
     }
@@ -54,7 +56,6 @@ public class EnemyController : MonoBehaviour
 
     void Update()
     {
-
         switch (currState)
         {
             case (EnemyState.Wander):
@@ -68,6 +69,15 @@ public class EnemyController : MonoBehaviour
             case (EnemyState.Attack):
                 Attack();
                 break;
+        }
+
+        if (player.transform.position.x > transform.position.x)
+        {
+            spriteRenderer.flipX = false;
+        }
+        else
+        {
+            spriteRenderer.flipX = true;
         }
 
         if (IsPlayerInRange(visionRange) && currState != EnemyState.Die)
@@ -92,7 +102,6 @@ public class EnemyController : MonoBehaviour
         {
             currState = EnemyState.Attack;
         }
-
     }
 
     private bool IsPlayerInRange(float VisionRange)
@@ -198,35 +207,18 @@ public class EnemyController : MonoBehaviour
         }
         if (lastPosition.x <= transform.position.x)
         {
-
             anim.SetBool("IsRunningLeft", false);
             anim.SetBool("IsIdleRight", false);
             anim.SetBool("IsRunningRight", true);
-
         }
 
     }
     void Attack()
     {
-
-        if (player.transform.position.x > transform.position.x)
-        {
-            anim.SetBool("IsRunningRight", false);
-            anim.SetBool("IsIdleLeft", false);
-            anim.SetBool("IsRunningLeft", false);
-            anim.SetBool("IsIdleRight", true);
-        }
-        else
-        {
-            anim.SetBool("IsRunningLeft", false);
-            anim.SetBool("IsIdleRight", false);
-            anim.SetBool("IsRunningRight", false);
-            anim.SetBool("IsIdleLeft", true);
-        }
+        anim.SetBool("IsRunning", true);
 
         if (!coolDownAttack)
         {
-
             switch (enemyType)
             {
                 case (EnemyType.Melee):
@@ -245,8 +237,10 @@ public class EnemyController : MonoBehaviour
 
     private IEnumerator CoolDown()
     {
+        anim.SetTrigger("IsAttacking");
         coolDownAttack = true;
         yield return new WaitForSeconds(attackCoolDown);
+
         coolDownAttack = false;
     }
 
@@ -254,6 +248,5 @@ public class EnemyController : MonoBehaviour
     {
         Destroy(gameObject);
         player.GetComponent<PlayerController>().DeleteEnemy(gameObject);
-
     }
 }
