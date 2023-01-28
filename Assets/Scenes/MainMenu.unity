@@ -10620,6 +10620,9 @@ MonoBehaviour:
   - name: PickWeapon
     audioClip: {fileID: 8300000, guid: 8d8be0d4bc1474944820ef3cda290a9a, type: 3}
     sourceId: 99
+  - name: ScytheSwing
+    audioClip: {fileID: 8300000, guid: e61d429244f18e74ea2abf2fedb97442, type: 3}
+    sourceId: 99
   musicSource: {fileID: 110472313}
   sfxSource: {fileID: 1414807444}
   walkingSource: {fileID: 123256072}

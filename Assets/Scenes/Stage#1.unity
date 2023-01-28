@@ -70638,7 +70638,7 @@ PrefabInstance:
     - target: {fileID: 4865917373910540398, guid: ff785e937ff98d542b5a66e133b4ea78,
         type: 3}
       propertyPath: spawnRadius
-      value: 4.5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4865917373910540398, guid: ff785e937ff98d542b5a66e133b4ea78,
         type: 3}
@@ -70659,7 +70659,7 @@ PrefabInstance:
         type: 3}
       propertyPath: enemies.Array.data[0]
       value: 
-      objectReference: {fileID: 4952176429209955776, guid: 2baa3a89f0231024b918e19b1518abec,
+      objectReference: {fileID: 7260597336228950928, guid: 3e4e792f198c5864faf6cee2d50a9cb6,
         type: 3}
     - target: {fileID: 4865917373910540398, guid: ff785e937ff98d542b5a66e133b4ea78,
         type: 3}
