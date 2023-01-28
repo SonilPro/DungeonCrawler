@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 189f34c224f0c474386792d4f794357e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  arrowHitEnemySource: {fileID: 0}
   lifeTime: 5
   speed: 15
   isEnemyBullet: 0

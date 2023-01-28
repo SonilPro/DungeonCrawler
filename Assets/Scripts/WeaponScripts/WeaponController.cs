@@ -11,7 +11,6 @@ public enum WeaponType
 
 public class WeaponController : MonoBehaviour
 {
-
     public WeaponType weaponType;
 
     [SerializeField] private Transform attackPoint = default;
@@ -52,14 +51,17 @@ public class WeaponController : MonoBehaviour
         switch (weaponType)
         {
             case (WeaponType.Melee):
+                AudioManager.Instance.PlaySFX("SwordSwing");
                 Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.transform.position, attackRange, enemyLayers);
                 foreach (Collider2D enemy in hitEnemies)
                 {
+                    AudioManager.Instance.PlaySFX("SwordHitEnemy");
                     enemy.GetComponent<EnemyController>().Death();
                     break;
                 }
                 break;
             case (WeaponType.Ranged):
+                AudioManager.Instance.PlaySFX("BowShooting");
                 GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity) as GameObject;
                 bullet.GetComponent<BulletController>().isPlayerBullet = true;
                 break;

@@ -37,6 +37,7 @@ public class BulletController : MonoBehaviour
         }
 
         rb.velocity = new Vector2(direction.x, direction.y).normalized * speed;
+        this.transform.Rotate(0.0f, 0.0f, Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg);
     }
 
     IEnumerator DeathDelay()
@@ -50,13 +51,21 @@ public class BulletController : MonoBehaviour
         if (target.tag == "Enemy" && isPlayerBullet)
         {
             target.gameObject.GetComponent<EnemyController>().Death();
-            Destroy(gameObject);
+            StartCoroutine(arrowHitCorutine(gameObject));
         }
 
         if (target.tag == "Player" && isEnemyBullet)
         {
             player.GetComponent<PlayerController>().DamagePlayer(1);
-            Destroy(gameObject);
+            StartCoroutine(arrowHitCorutine(gameObject));
         }
     }
+
+    IEnumerator arrowHitCorutine(GameObject gameObject)
+    {
+        AudioManager.Instance.PlaySFX("ArrowHitEnemy");
+        yield return new WaitForSeconds(0.1f);
+        Destroy(gameObject);
+    }
+
 }
