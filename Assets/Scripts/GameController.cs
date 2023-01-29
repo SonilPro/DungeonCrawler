@@ -25,7 +25,7 @@ public class GameController : MonoBehaviour
         Instance = this;
         player = GameObject.FindGameObjectWithTag("Player");
 
-        //Cursor.SetCursor(cursor, new Vector2(cursor.width / 2, cursor.height / 2), CursorMode.ForceSoftware);
+        Cursor.SetCursor(cursor, new Vector2(cursor.width / 2, cursor.height / 2), CursorMode.ForceSoftware);
     }
 
     private void Update()
