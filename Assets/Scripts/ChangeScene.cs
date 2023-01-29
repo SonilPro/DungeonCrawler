@@ -13,7 +13,10 @@ public class ChangeScene : MonoBehaviour
     {
         StartCoroutine(DelaySceneLoading(sceneName, 1.5f));
 
-        loadingPanel.SetActive(true);
+        if (sceneName != "MainMenu")
+        {
+            loadingPanel.SetActive(true);
+        }
     }
 
     IEnumerator DelaySceneLoading(string sceneName, float delayTime)

@@ -11,6 +11,7 @@ public class GameController : MonoBehaviour
 
     [SerializeField] private Texture2D cursor;
     [SerializeField] private GameObject deathScreen;
+    [SerializeField] private GameObject pauseMenu;
     private bool gameIsPaused = false;
 
 
@@ -24,12 +25,12 @@ public class GameController : MonoBehaviour
         Instance = this;
         player = GameObject.FindGameObjectWithTag("Player");
 
-        Cursor.SetCursor(cursor, new Vector2(cursor.width / 2, cursor.height / 2), CursorMode.ForceSoftware);
+        //Cursor.SetCursor(cursor, new Vector2(cursor.width / 2, cursor.height / 2), CursorMode.ForceSoftware);
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             (gameIsPaused ? (Action)ResumeGame : PauseGame)();
         }
@@ -42,11 +43,13 @@ public class GameController : MonoBehaviour
 
     private void PauseGame()
     {
+        pauseMenu.SetActive(true);
         gameIsPaused = true;
         Time.timeScale = 0f;
     }
-    private void ResumeGame()
+    public void ResumeGame()
     {
+        pauseMenu.SetActive(false);
         gameIsPaused = false;
         Time.timeScale = 1f;
     }
