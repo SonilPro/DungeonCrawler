@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-
     //PLAYER VARIABLES
     private Animator anim;
     private Rigidbody2D rb;
@@ -33,6 +32,11 @@ public class PlayerController : MonoBehaviour
         Movement();
         float shootHor = Input.GetAxis("ShootHorizontal");
         float shootVert = Input.GetAxis("ShootVertical");
+    }
+
+    public void PlayFootstep()
+    {
+        AudioManager.Instance.PlaySFX("PlayerWalking");
     }
 
     public void DamagePlayer(int damage)

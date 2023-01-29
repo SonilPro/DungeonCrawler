@@ -46,7 +46,6 @@ public class WeaponSwapper : MonoBehaviour
 
     void SwapWeapon()
     {
-
         mainWeapon.SetActive(!mainWeapon.activeInHierarchy);
         offHandWeapon.SetActive(!offHandWeapon.activeInHierarchy);
 
@@ -58,7 +57,7 @@ public class WeaponSwapper : MonoBehaviour
 
     void PickupWeapon(Collider2D target)
     {
-
+        AudioManager.Instance.PlaySFX("PickWeapon");
         target.GetComponentInChildren<WeaponController>().isAtached = true;
         target.transform.position = new Vector3(activeWeapon.transform.position.x, activeWeapon.transform.position.y + (target.GetComponentInChildren<SpriteRenderer>().sprite.pivot.y / 32 * 3 / 8), activeWeapon.transform.position.z);
         target.transform.SetParent(activeWeapon.transform);

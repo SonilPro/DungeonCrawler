@@ -38,6 +38,7 @@ public class RoomController : MonoBehaviour
     {
         foreach (Transform door in doors)
         {
+            AudioManager.Instance.PlaySFX("DoorCreak");
             door.gameObject.SetActive(!door.gameObject.activeSelf);
         }
     }
@@ -49,6 +50,7 @@ public class RoomController : MonoBehaviour
             spawnersEnabled = true;
             foreach (Transform spawner in spawners)
             {
+                AudioManager.Instance.PlaySFX("DoorCreak");
                 spawner.GetComponent<EnemySpawner>().Spawn();
             }
 

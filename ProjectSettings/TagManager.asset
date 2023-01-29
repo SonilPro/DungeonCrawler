@@ -51,6 +51,15 @@ TagManager:
   - name: background
     uniqueID: 3800191807
     locked: 0
+  - name: floor
+    uniqueID: 3535348527
+    locked: 0
+  - name: decoration
+    uniqueID: 3144727667
+    locked: 0
+  - name: decoration#2
+    uniqueID: 3027264329
+    locked: 0
   - name: Bullet
     uniqueID: 1257171425
     locked: 0

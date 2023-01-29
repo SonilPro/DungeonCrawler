@@ -164,5 +164,5 @@ MonoBehaviour:
   speed: 3
   attackRange: 5
   attackCoolDown: 1
-  bulletPrefab: {fileID: 7284191674627908290, guid: 2d57e6dcc1fc64042901b0f27d6ec36d,
+  bulletPrefab: {fileID: 2612605535143624610, guid: b65a4d64e0c313a4196411ccca621f87,
     type: 3}
