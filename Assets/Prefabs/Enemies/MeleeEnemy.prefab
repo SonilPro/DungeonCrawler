@@ -77,13 +77,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 8596640243658272642, guid: f141be88fcf02c04aa400c441c433155,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: c2834341f055573449f374ad64ba3c88, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.5, y: 1.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -123,7 +122,7 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.5}
+  m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.53125, y: 1}
   m_Direction: 0
 --- !u!95 &4952176429209955787
@@ -136,7 +135,7 @@ Animator:
   m_GameObject: {fileID: 4952176429209955776}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 173202c989f85da4d837c78d6a2dcf3f, type: 2}
+  m_Controller: {fileID: 9100000, guid: 4ced0b0600440e64b8d134230baff808, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -162,6 +161,6 @@ MonoBehaviour:
   enemyType: 0
   visionRange: 10
   speed: 3
-  attackRange: 1
+  attackRange: 0.7
   attackCoolDown: 1
   bulletPrefab: {fileID: 0}

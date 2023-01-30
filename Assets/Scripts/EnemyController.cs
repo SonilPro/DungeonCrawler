@@ -197,6 +197,8 @@ public class EnemyController : MonoBehaviour
 
     void Follow()
     {
+        anim.SetBool("IsRunning", true);
+
         lastPosition = transform.position;
         transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
         if (lastPosition.x >= transform.position.x)
@@ -215,8 +217,7 @@ public class EnemyController : MonoBehaviour
     }
     void Attack()
     {
-        anim.SetBool("IsRunning", true);
-
+        anim.SetBool("IsRunning", false);
         if (!coolDownAttack)
         {
             switch (enemyType)
