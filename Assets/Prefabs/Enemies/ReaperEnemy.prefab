@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8300870021523555055}
   - component: {fileID: 7260597336228950939}
   - component: {fileID: 7260597336228950935}
+  - component: {fileID: 5747268459968181243}
   m_Layer: 9
   m_Name: ReaperEnemy
   m_TagString: Enemy
@@ -164,3 +165,30 @@ MonoBehaviour:
   attackRange: 1
   attackCoolDown: 2
   bulletPrefab: {fileID: 0}
+--- !u!114 &5747268459968181243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7260597336228950928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_ComponentVersion: 1
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 3f5382e22f23b9d273bc70bb496370b4e1e9ee4a07007e9f9962fac500000000b7f9707cef94266ba7f2032e
+  m_ShapePath:
+  - {x: -0.51010895, y: -0.872242, z: 0}
+  - {x: -0.6824446, y: 0.27251244, z: 0}
+  - {x: -0.16544819, y: 0.85156155, z: 0}
+  - {x: -0.41361237, y: -0.8446684, z: 0}
+  m_ShapePathHash: 1983395717
+  m_Mesh: {fileID: 0}
+  m_InstanceId: 102392

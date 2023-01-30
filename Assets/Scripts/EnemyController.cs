@@ -73,11 +73,11 @@ public class EnemyController : MonoBehaviour
 
         if (player.transform.position.x > transform.position.x)
         {
-            spriteRenderer.flipX = false;
+            this.transform.rotation = Quaternion.Euler(0, 0, 0);
         }
         else
         {
-            spriteRenderer.flipX = true;
+            this.transform.rotation = Quaternion.Euler(0, 180, 0);
         }
 
         if (IsPlayerInRange(visionRange) && currState != EnemyState.Die)
