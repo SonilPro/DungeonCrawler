@@ -222,6 +222,7 @@ public class EnemyController : MonoBehaviour
             switch (enemyType)
             {
                 case (EnemyType.Melee):
+                    AudioManager.Instance.PlaySFX("ScytheSwing");
                     player.GetComponent<PlayerController>().DamagePlayer(1);
                     StartCoroutine(CoolDown());
                     break;
