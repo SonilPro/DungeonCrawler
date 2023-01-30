@@ -56,6 +56,7 @@ public class PlayerController : MonoBehaviour
 
     public void KillPlayer()
     {
+        GameController.Instance.ShowDeathScreen();
         transform.position = new Vector3(0, 1000, 0);
         Debug.Log("dead");
     }

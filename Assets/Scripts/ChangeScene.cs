@@ -11,11 +11,19 @@ public class ChangeScene : MonoBehaviour
 
     public void LoadScene(string sceneName)
     {
-        AudioManager.Instance.PlaySFX("ButtonPress");
-        StartCoroutine(DelaySceneLoading(sceneName, 1.5f));
-        loadingPanel.SetActive(true);
-        AudioManager.Instance.PlayMusic("Music");
-        AudioManager.Instance.PlayMusic("DungeonNoise");
+
+        if (sceneName != "MainMenu")
+        {
+            AudioManager.Instance.PlaySFX("ButtonPress");
+            StartCoroutine(DelaySceneLoading(sceneName, 1.5f));
+            loadingPanel.SetActive(true);
+            AudioManager.Instance.PlayMusic("Music");
+            AudioManager.Instance.PlayMusic("DungeonNoise");
+        }
+        else
+        {
+            SceneManager.LoadScene(sceneName);
+        }
     }
 
     IEnumerator DelaySceneLoading(string sceneName, float delayTime)

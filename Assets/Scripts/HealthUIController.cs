@@ -10,7 +10,7 @@ public class HealthUIController : MonoBehaviour
     private float fillValue;
     private PlayerController playerController;
 
-    private void Awake()
+    private void Start()
     {
         playerController = GameController.Instance.player.GetComponent<PlayerController>();
     }
